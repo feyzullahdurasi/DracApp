@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		650C4E892C5D171D003F2566 /* DracAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C4E882C5D171D003F2566 /* DracAppApp.swift */; };
-		650C4E8B2C5D171D003F2566 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C4E8A2C5D171D003F2566 /* ContentView.swift */; };
+		650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C4E8A2C5D171D003F2566 /* MainView.swift */; };
 		650C4E8D2C5D171D003F2566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650C4E8C2C5D171D003F2566 /* Assets.xcassets */; };
 		650C4E902C5D171D003F2566 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */; };
+		659465422C5E7C0300D58326 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* MapsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		650C4E852C5D171D003F2566 /* DracApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DracApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		650C4E882C5D171D003F2566 /* DracAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DracAppApp.swift; sourceTree = "<group>"; };
-		650C4E8A2C5D171D003F2566 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		650C4E8A2C5D171D003F2566 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		650C4E8C2C5D171D003F2566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		659465412C5E7C0300D58326 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				650C4E882C5D171D003F2566 /* DracAppApp.swift */,
-				650C4E8A2C5D171D003F2566 /* ContentView.swift */,
+				650C4E8A2C5D171D003F2566 /* MainView.swift */,
+				659465412C5E7C0300D58326 /* MapsView.swift */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
 				650C4E8E2C5D171D003F2566 /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650C4E8B2C5D171D003F2566 /* ContentView.swift in Sources */,
+				659465422C5E7C0300D58326 /* MapsView.swift in Sources */,
+				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,
 				650C4E892C5D171D003F2566 /* DracAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

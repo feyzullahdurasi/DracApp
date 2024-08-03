@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct DracAppApp: App {
+struct DappApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
