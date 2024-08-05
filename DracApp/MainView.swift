@@ -2,7 +2,7 @@ import SwiftUI
 import MapKit
 
 struct MainView: View {
-    @State private var activeView: ActiveView?
+    @StateObject private var viewModel = MainViewModel()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 41.0082, longitude: 28.9784),
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -24,7 +24,9 @@ struct MainView: View {
     private func portraitLayout(geometry: GeometryProxy) -> some View {
         VStack(spacing: 10) {
             Spacer()
-            activeViewContent(geometry: geometry)
+            ForEach(Array(viewModel.activeViews), id: \.self) { view in
+                viewForActiveView(view, geometry: geometry)
+            }
             buttonBar
         }
     }
@@ -32,16 +34,10 @@ struct MainView: View {
     private func landscapeLayout(geometry: GeometryProxy) -> some View {
         HStack {
             Spacer()
-            activeViewContent(geometry: geometry)
-            buttonColumn
-        }
-    }
-    
-    private func activeViewContent(geometry: GeometryProxy) -> some View {
-        Group {
-            if let activeView = activeView {
-                viewForActiveView(activeView, geometry: geometry)
+            ForEach(Array(viewModel.activeViews), id: \.self) { view in
+                viewForActiveView(view, geometry: geometry)
             }
+            buttonColumn
         }
     }
     
@@ -66,8 +62,8 @@ struct MainView: View {
     
     private func frameSize(for geometry: GeometryProxy) -> CGSize {
         let isLandscape = geometry.size.width > geometry.size.height
-        let width = isLandscape ? geometry.size.width - 180 : geometry.size.width - 40
-        let height = isLandscape ? geometry.size.height - 40 : geometry.size.height - 200
+        let width = isLandscape ? (geometry.size.width - 180) / CGFloat(viewModel.activeViews.count) : (geometry.size.width - 40)
+        let height = isLandscape ? (geometry.size.height - 40) : (geometry.size.height - 200) / CGFloat(viewModel.activeViews.count)
         return CGSize(width: width, height: height)
     }
     
@@ -96,7 +92,9 @@ struct MainView: View {
     }
     
     private func buttonView(for view: ActiveView) -> some View {
-        Button(action: { activeView = (activeView == view) ? nil : view }) {
+        Button(action: {
+            viewModel.toggleView(view)
+        }) {
             Image(systemName: view.systemImageName)
                 .font(.system(size: 30))
                 .padding()
@@ -104,77 +102,6 @@ struct MainView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
         }
-    }
-}
-
-enum ActiveView: CaseIterable {
-    case maps, contacts, youtube, instagram
-    
-    var systemImageName: String {
-        switch self {
-        case .maps: return "map"
-        case .contacts: return "phone"
-        case .youtube: return "music.note"
-        case .instagram: return "car.fill"
-        }
-    }
-    
-    var backgroundColor: Color {
-        switch self {
-        case .maps: return .blue
-        case .contacts: return .green
-        case .youtube: return .purple
-        case .instagram: return .orange
-        }
-    }
-}
-
-struct GenericView: View {
-    @Binding var isShowing: Bool
-    let title: String
-    
-    var body: some View {
-        VStack {
-            
-            Text(title)
-                .font(.title)
-        }
-    }
-}
-
-struct ContactsView: View {
-    @Binding var showContacts: Bool
-    
-    var body: some View {
-        GenericView(isShowing: $showContacts, title: "Contacts View")
-    }
-}
-
-struct YouTubeView: View {
-    @Binding var showYouTube: Bool
-    
-    var body: some View {
-        GenericView(isShowing: $showYouTube, title: "YouTube View")
-    }
-}
-
-struct InstagramView: View {
-    @Binding var showInstagram: Bool
-    
-    var body: some View {
-        GenericView(isShowing: $showInstagram, title: "Instagram View")
-    }
-}
-
-struct MapView: UIViewRepresentable {
-    @Binding var region: MKCoordinateRegion
-    
-    func makeUIView(context: Context) -> MKMapView {
-        MKMapView()
-    }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.setRegion(region, animated: true)
     }
 }
 
