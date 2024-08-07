@@ -8,8 +8,8 @@
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var activeViews: Set<ActiveView> = []
-    private let maxActiveViews = 3  // Maksimum aktif görünüm sayısı
+    @Published var activeViews: Set<ActiveView> = [.maps, .youtube]  // Varsayılan olarak iki ekran açık
+    private let maxActiveViews = 2  // Maksimum aktif görünüm sayısı
     
     func toggleView(_ view: ActiveView) {
         if activeViews.contains(view) {
