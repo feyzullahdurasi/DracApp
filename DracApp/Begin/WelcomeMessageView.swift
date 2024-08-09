@@ -14,10 +14,10 @@ struct WelcomeMessageView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Welcome, \(userName)!")
+            Text("Merhaba, \(userName)!")
                 .font(.largeTitle)
                 .padding()
-                .background(Color.black.opacity(0.75))
+                .background(Color.black.opacity(0.5))
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .offset(y: isVisible ? 0 : UIScreen.main.bounds.height)

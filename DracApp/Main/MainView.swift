@@ -12,7 +12,8 @@ struct MainView: View {
     @State private var isWelcomeMessageVisible: Bool = true
     @State private var userName: String = ""
     @State private var isShowingSettings = false
-    @State private var isButtonBarVisible: Bool = true
+    @State private var isButtonBarVisible: Bool = false
+    @State private var isButtonBarVisible1: Bool = false
     
     var body: some View {
         ZStack {
@@ -51,7 +52,7 @@ struct MainView: View {
                 UserDefaults.standard.set(false, forKey: "isFirstLaunch")
             }
         }
-        .sheet(isPresented: $isShowingSettings) {
+        .fullScreenCover(isPresented: $isShowingSettings) {
             SettingsView(isShowing: $isShowingSettings)
         }
     }
@@ -65,6 +66,18 @@ struct MainView: View {
             }
             if isButtonBarVisible {
                 buttonBar
+            } else {
+                Button(action: toggleButtonBar) {
+                    Image(systemName: "chevron.up" )
+                        .font(.system(size: 15))
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                }
+                
+                .ignoresSafeArea(.all)
+                .padding(.bottom ,-20)
             }
         }
     }
@@ -77,6 +90,15 @@ struct MainView: View {
             }
             if isButtonBarVisible {
                 buttonColumn
+            } else {
+                Button(action: toggleButtonBar) {
+                    Image(systemName: "chevron.left" )
+                        .font(.system(size: 15))
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                }
             }
         }
     }
@@ -93,8 +115,8 @@ struct MainView: View {
                 YouTubeView(showYouTube: .constant(true))
             case .instagram:
                 InstagramView(showInstagram: .constant(true))
-            case .settings:
-                SettingsView(isShowing: $isShowingSettings)
+            case .speed:
+                SpeedView(showSpeed: .constant(true))
             }
         }
         .frame(width: frameSize.width, height: frameSize.height)
@@ -105,7 +127,7 @@ struct MainView: View {
     private func frameSize(for geometry: GeometryProxy) -> CGSize {
             let isLandscape = geometry.size.width > geometry.size.height
             let width = isLandscape ? (geometry.size.width - (isButtonBarVisible ? 90 : 0)) / CGFloat(viewModel.activeViews.count) : (geometry.size.width)
-            let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 120 : 0)) / CGFloat(viewModel.activeViews.count)
+            let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 100 : 0)) / CGFloat(viewModel.activeViews.count)
             return CGSize(width: width, height: height)
         }
     
@@ -116,13 +138,23 @@ struct MainView: View {
                 ForEach(ActiveView.allCases, id: \.self) { view in
                     buttonView(for: view)
                 }
+                Button(action: {
+                    isShowingSettings = true
+                }) {
+                    Image(systemName: "gearshape")
+                        .font(.system(size: 30))
+                        .padding()
+                        .background(.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
         }
         .padding(.vertical)
         .background(Color.gray)
         .overlay(
             Button(action: toggleButtonBar) {
-                Image(systemName: isButtonBarVisible ? "chevron.down" : "chevron.up")
+                Image(systemName: "chevron.down")
                     .font(.system(size: 15))
                     .padding(10)
                     .foregroundColor(.white)
@@ -141,18 +173,18 @@ struct MainView: View {
                 }
             }
         }
-        .padding(.horizontal)
+        .padding(.leading)
         .background(Color.gray)
         .overlay(
             Button(action: toggleButtonBar) {
-                Image(systemName: isButtonBarVisible ? "chevron.right" : "chevron.left")
+                Image(systemName: "chevron.right")
                     .font(.system(size: 20))
                     .padding(10)
                     .foregroundColor(.white)
                     .background(Color.gray)
                     .clipShape(Circle())
             }
-                .padding(.trailing, 100)
+                .padding(.trailing, 85)
         )
     }
     
