@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ShoppingItemView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            //image
+            Image("TelefonTutucu")
+                .resizable()
+                .frame(width: 120, height: 120)
+            // details
+            HStack (alignment: .top){
+                Text("Magsafe özelliğine sahip telefon tutucu")
+                Spacer()
+                VStack(spacing: 35) {
+                    Text("190 ₺")
+                        .foregroundColor(.init(red: 0.1, green: 0.3, blue: 0.3))
+                        
+                }
+            }
+        }
+        .foregroundColor(.black)
+        
     }
 }
 

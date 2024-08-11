@@ -17,6 +17,8 @@
 		658B67E22C66176200BED98B /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E12C66176200BED98B /* ThemeChangeView.swift */; };
 		658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E52C6760E000BED98B /* YoutubeMusicView.swift */; };
 		658B67E82C67C7F000BED98B /* FirstMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E72C67C7F000BED98B /* FirstMusicView.swift */; };
+		658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E92C68A4D800BED98B /* ShoppingView.swift */; };
+		658B67ED2C68A5A800BED98B /* ShoppingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */; };
 		659465422C5E7C0300D58326 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* ActiveView.swift */; };
 		65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */; };
 		65CA7EB82C613403003BCE79 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */; };
@@ -36,6 +38,8 @@
 		658B67E12C66176200BED98B /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
 		658B67E52C6760E000BED98B /* YoutubeMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMusicView.swift; sourceTree = "<group>"; };
 		658B67E72C67C7F000BED98B /* FirstMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMusicView.swift; sourceTree = "<group>"; };
+		658B67E92C68A4D800BED98B /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemView.swift; sourceTree = "<group>"; };
 		659465412C5E7C0300D58326 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				658B67E32C67608800BED98B /* Components */,
 				658B67E42C6760A600BED98B /* Setting */,
 				65E01F0D2C63B32F000D0780 /* LocationManager.swift */,
+				658B67EB2C68A57D00BED98B /* Shopping */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
 				650C4E8E2C5D171D003F2566 /* Preview Content */,
 			);
@@ -112,6 +117,15 @@
 				658B67E12C66176200BED98B /* ThemeChangeView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		658B67EB2C68A57D00BED98B /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				658B67E92C68A4D800BED98B /* ShoppingView.swift */,
+				658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */,
+			);
+			path = Shopping;
 			sourceTree = "<group>";
 		};
 		65E01F0A2C63799C000D0780 /* Main */ = {
@@ -202,10 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658B67ED2C68A5A800BED98B /* ShoppingItemView.swift in Sources */,
 				653735FC2C60B39000A91D97 /* MainViewModel.swift in Sources */,
 				65CA7EBA2C613E5F003BCE79 /* SettingsView.swift in Sources */,
 				653735FA2C60B35700A91D97 /* ComponentsView.swift in Sources */,
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
+				658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
 				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,

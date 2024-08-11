@@ -15,7 +15,9 @@ struct MainView: View {
     @State private var isButtonBarVisible: Bool = false
     @State private var isButtonBarVisible1: Bool = false
     @State private var showActionSheet = false
-    @State private var selectedStreamingService: StreamingService = .spotify
+    @State private var selectedStreamingService: StreamingService = .youtubeMusic
+    @State private var isShowingShopping = false
+    
     var body: some View {
         ZStack {
             if isFirstLaunch {
@@ -55,6 +57,9 @@ struct MainView: View {
         }
         .fullScreenCover(isPresented: $isShowingSettings) {
             SettingsView(isShowing: $isShowingSettings, selectedStreamingService: $selectedStreamingService)
+        }
+        .fullScreenCover(isPresented: $isShowingShopping){
+            ShoppingView(isShowingShop: $isShowingShopping)
         }
     }
     
@@ -138,6 +143,16 @@ struct MainView: View {
                 Spacer()
                 ForEach(ActiveView.allCases, id: \.self) { view in
                     buttonView(for: view)
+                }
+                Button(action: {
+                    isShowingShopping = true
+                }) {
+                    Image(systemName: "globe")
+                        .font(.system(size: 30))
+                        .padding()
+                        .background(.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
                 Button(action: {
                     isShowingSettings = true
