@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var isShowing: Bool
-    
+    @Binding var selectedStreamingService: StreamingService
     @State private var areNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: "areNotificationsEnabled")
     @State private var changeTheme: Bool = false
     @AppStorage("userTheme") private var userTheme: Theme = .systemDefault
@@ -39,6 +39,22 @@ struct SettingsView: View {
                     Button("Chose Theme") {
                         changeTheme.toggle()
                     }.preferredColorScheme(userTheme.colorSheme)
+                    
+                    Picker(selection: $selectedStreamingService, label: Text("Streaming Service")) {
+                        Text("YouTube Music").tag(StreamingService.youtubeMusic)
+                        Text("Spotify").tag(StreamingService.spotify)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: selectedStreamingService) { newValue in
+                        let serviceString: String
+                        switch newValue {
+                        case .spotify:
+                            serviceString = "spotify"
+                        case .youtubeMusic:
+                            serviceString = "youtubeMusic"
+                        }
+                        UserDefaults.standard.set(serviceString, forKey: "preferredStreamingService")
+                    }
                 }
                 
                 Section(header: Text("Hesap")) {
@@ -47,7 +63,7 @@ struct SettingsView: View {
                             TextField("Kullanıcı Adı", text: $userName, onCommit: {
                                 // Kullanıcı adı değiştiğinde UserDefaults'a kaydet
                                 UserDefaults.standard.set(userName, forKey: "userName")
-                                isEditingUserName = false // Düzenleme modunu kapat
+                                isEditingUserName = false
                             })
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             
@@ -56,7 +72,7 @@ struct SettingsView: View {
                                 .padding()
                             Spacer()
                             Button("Düzenle") {
-                                isEditingUserName = true // Düzenleme modunu aç
+                                isEditingUserName = true
                             }
                         }
                     }
@@ -83,7 +99,7 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(isShowing: .constant(true))
+    SettingsView(isShowing: .constant(true), selectedStreamingService: .constant(.spotify))
 }
 
 enum Theme : String, CaseIterable {

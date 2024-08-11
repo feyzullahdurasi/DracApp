@@ -14,7 +14,8 @@ struct MainView: View {
     @State private var isShowingSettings = false
     @State private var isButtonBarVisible: Bool = false
     @State private var isButtonBarVisible1: Bool = false
-    
+    @State private var showActionSheet = false
+    @State private var selectedStreamingService: StreamingService = .spotify
     var body: some View {
         ZStack {
             if isFirstLaunch {
@@ -53,7 +54,7 @@ struct MainView: View {
             }
         }
         .fullScreenCover(isPresented: $isShowingSettings) {
-            SettingsView(isShowing: $isShowingSettings)
+            SettingsView(isShowing: $isShowingSettings, selectedStreamingService: $selectedStreamingService)
         }
     }
     
@@ -111,8 +112,8 @@ struct MainView: View {
                 CustomMapView(region: $region, selectedCoordinate: $selectedCoordinate)
             case .contacts:
                 ContactsView(showContacts: .constant(true))
-            case .youtube:
-                YouTubeView(showYouTube: .constant(true))
+            case .youtubeMusic:
+                YoutubeMusicView(selectedStreamingService: selectedStreamingService)
             case .instagram:
                 InstagramView(showInstagram: .constant(true))
             case .speed:

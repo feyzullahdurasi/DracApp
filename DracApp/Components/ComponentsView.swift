@@ -28,11 +28,10 @@ struct ContactsView: View {
     }
 }
 
-struct YouTubeView: View {
-    @Binding var showYouTube: Bool
-    
+struct YoutubeMusicHomepageView: View {
     var body: some View {
-        GenericView(isShowing: $showYouTube, title: "YouTube View")
+        YoutubeMusicHomepageView() // Updated to use the new view
+            
     }
 }
 

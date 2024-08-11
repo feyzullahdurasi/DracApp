@@ -15,6 +15,8 @@
 		653735FC2C60B39000A91D97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653735FB2C60B39000A91D97 /* MainViewModel.swift */; };
 		658B67E02C66132000BED98B /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67DF2C66132000BED98B /* SpeedView.swift */; };
 		658B67E22C66176200BED98B /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E12C66176200BED98B /* ThemeChangeView.swift */; };
+		658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E52C6760E000BED98B /* YoutubeMusicView.swift */; };
+		658B67E82C67C7F000BED98B /* FirstMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E72C67C7F000BED98B /* FirstMusicView.swift */; };
 		659465422C5E7C0300D58326 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* ActiveView.swift */; };
 		65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */; };
 		65CA7EB82C613403003BCE79 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */; };
@@ -32,6 +34,8 @@
 		653735FB2C60B39000A91D97 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		658B67DF2C66132000BED98B /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
 		658B67E12C66176200BED98B /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
+		658B67E52C6760E000BED98B /* YoutubeMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMusicView.swift; sourceTree = "<group>"; };
+		658B67E72C67C7F000BED98B /* FirstMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMusicView.swift; sourceTree = "<group>"; };
 		659465412C5E7C0300D58326 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
@@ -73,11 +77,9 @@
 				65E01F0A2C63799C000D0780 /* Main */,
 				65E01F0B2C6393B8000D0780 /* Begin */,
 				659465412C5E7C0300D58326 /* ActiveView.swift */,
-				653735F92C60B35700A91D97 /* ComponentsView.swift */,
-				658B67DF2C66132000BED98B /* SpeedView.swift */,
-				65CA7EB92C613E5E003BCE79 /* SettingsView.swift */,
+				658B67E32C67608800BED98B /* Components */,
+				658B67E42C6760A600BED98B /* Setting */,
 				65E01F0D2C63B32F000D0780 /* LocationManager.swift */,
-				658B67E12C66176200BED98B /* ThemeChangeView.swift */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
 				650C4E8E2C5D171D003F2566 /* Preview Content */,
 			);
@@ -90,6 +92,26 @@
 				650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		658B67E32C67608800BED98B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				653735F92C60B35700A91D97 /* ComponentsView.swift */,
+				658B67E52C6760E000BED98B /* YoutubeMusicView.swift */,
+				658B67E72C67C7F000BED98B /* FirstMusicView.swift */,
+				658B67DF2C66132000BED98B /* SpeedView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		658B67E42C6760A600BED98B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				65CA7EB92C613E5E003BCE79 /* SettingsView.swift */,
+				658B67E12C66176200BED98B /* ThemeChangeView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		65E01F0A2C63799C000D0780 /* Main */ = {
@@ -186,7 +208,9 @@
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
+				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,
 				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,
+				658B67E82C67C7F000BED98B /* FirstMusicView.swift in Sources */,
 				650C4E892C5D171D003F2566 /* DracAppApp.swift in Sources */,
 				65CA7EB82C613403003BCE79 /* WelcomeMessageView.swift in Sources */,
 				658B67E22C66176200BED98B /* ThemeChangeView.swift in Sources */,
