@@ -8,9 +8,9 @@
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var activeViews: Set<ActiveView> = [.youtubeMusic]  // Varsayılan olarak iki ekran açık
+    @Published var activeViews: Set<ActiveView> = [.maps, .youtubeMusic]  // Varsayılan olarak iki ekran açık
     private let maxActiveViews = 2  // Maksimum aktif görünüm sayısı
-    
+
     func toggleView(_ view: ActiveView) {
         if activeViews.contains(view) {
             activeViews.remove(view)
@@ -24,8 +24,31 @@ class MainViewModel: ObservableObject {
             activeViews.insert(view)
         }
     }
-}
 
+    func isViewActive(_ view: ActiveView) -> Bool {
+        return activeViews.contains(view)
+    }
+
+    func handleURL(url: URL) {
+        // URL'nin içeriğini çözümleyin
+        switch url.scheme {
+        case "DracApp":
+            // Uygulamanızın özel URL şeması "DracApp" ise işlem yapın
+            if let host = url.host {
+                switch host {
+                case "maps":
+                    toggleView(.maps)
+                case "youtubeMusic":
+                    toggleView(.youtubeMusic)
+                default:
+                    break
+                }
+            }
+        default:
+            break
+        }
+    }
+}
 enum StreamingService {
     case spotify
     case youtubeMusic

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		658B67E82C67C7F000BED98B /* FirstMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E72C67C7F000BED98B /* FirstMusicView.swift */; };
 		658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E92C68A4D800BED98B /* ShoppingView.swift */; };
 		658B67ED2C68A5A800BED98B /* ShoppingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */; };
+		658B67EF2C6A24D000BED98B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */; };
+		658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F32C6A2BFA00BED98B /* Constants.swift */; };
 		659465422C5E7C0300D58326 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* ActiveView.swift */; };
 		65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */; };
 		65CA7EB82C613403003BCE79 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */; };
@@ -40,6 +42,9 @@
 		658B67E72C67C7F000BED98B /* FirstMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMusicView.swift; sourceTree = "<group>"; };
 		658B67E92C68A4D800BED98B /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemView.swift; sourceTree = "<group>"; };
+		658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:2FNC3A47ZF:Spotify"; lastKnownFileType = wrapper.xcframework; path = SpotifyiOS.xcframework; sourceTree = "<group>"; };
+		658B67F02C6A25D600BED98B /* DracApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DracApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		658B67F32C6A2BFA00BED98B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		659465412C5E7C0300D58326 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658B67EF2C6A24D000BED98B /* SpotifyiOS.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +92,10 @@
 				65E01F0D2C63B32F000D0780 /* LocationManager.swift */,
 				658B67EB2C68A57D00BED98B /* Shopping */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
+				658B67F32C6A2BFA00BED98B /* Constants.swift */,
+				658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */,
 				650C4E8E2C5D171D003F2566 /* Preview Content */,
+				658B67F02C6A25D600BED98B /* DracApp-Bridging-Header.h */,
 			);
 			path = DracApp;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 				TargetAttributes = {
 					650C4E842C5D171C003F2566 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -223,6 +233,7 @@
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
 				658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
+				658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
 				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,
 				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,
@@ -361,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DracApp/Preview Content\"";
@@ -379,9 +391,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = feyzullahdurasi.DracApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DracApp/DracApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DracApp/Preview Content\"";
@@ -410,9 +426,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = feyzullahdurasi.DracApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DracApp/DracApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

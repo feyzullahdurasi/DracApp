@@ -8,10 +8,16 @@
 import SwiftUI
 
 @main
-struct DappApp: App {
+struct DracApp: App {
+    @StateObject private var viewModel = MainViewModel() // ViewModel'inizi tanımlayın
+
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(viewModel) // ViewModel'i ortama ekleyin
+                .onOpenURL { url in
+                    viewModel.handleURL(url: url)
+                }
         }
     }
 }
