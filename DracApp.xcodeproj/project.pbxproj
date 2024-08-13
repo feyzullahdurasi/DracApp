@@ -21,6 +21,8 @@
 		658B67ED2C68A5A800BED98B /* ShoppingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67EC2C68A5A800BED98B /* ShoppingItemView.swift */; };
 		658B67EF2C6A24D000BED98B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */; };
 		658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F32C6A2BFA00BED98B /* Constants.swift */; };
+		658B67F62C6A525200BED98B /* SpotifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F52C6A525200BED98B /* SpotifyViewModel.swift */; };
+		658B67F82C6A6E0900BED98B /* SpotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F72C6A6E0900BED98B /* SpotifyView.swift */; };
 		659465422C5E7C0300D58326 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* ActiveView.swift */; };
 		65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */; };
 		65CA7EB82C613403003BCE79 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */; };
@@ -45,6 +47,8 @@
 		658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:2FNC3A47ZF:Spotify"; lastKnownFileType = wrapper.xcframework; path = SpotifyiOS.xcframework; sourceTree = "<group>"; };
 		658B67F02C6A25D600BED98B /* DracApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DracApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		658B67F32C6A2BFA00BED98B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		658B67F52C6A525200BED98B /* SpotifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewModel.swift; sourceTree = "<group>"; };
+		658B67F72C6A6E0900BED98B /* SpotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyView.swift; sourceTree = "<group>"; };
 		659465412C5E7C0300D58326 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65CA7EB72C613403003BCE79 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				653735F92C60B35700A91D97 /* ComponentsView.swift */,
 				658B67E52C6760E000BED98B /* YoutubeMusicView.swift */,
+				658B67F52C6A525200BED98B /* SpotifyViewModel.swift */,
+				658B67F72C6A6E0900BED98B /* SpotifyView.swift */,
 				658B67E72C67C7F000BED98B /* FirstMusicView.swift */,
 				658B67DF2C66132000BED98B /* SpeedView.swift */,
 			);
@@ -233,9 +239,11 @@
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
 				658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
+				658B67F62C6A525200BED98B /* SpotifyViewModel.swift in Sources */,
 				658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
 				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,
+				658B67F82C6A6E0900BED98B /* SpotifyView.swift in Sources */,
 				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,
 				658B67E82C67C7F000BED98B /* FirstMusicView.swift in Sources */,
 				650C4E892C5D171D003F2566 /* DracAppApp.swift in Sources */,

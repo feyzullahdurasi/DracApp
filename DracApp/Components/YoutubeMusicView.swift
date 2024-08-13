@@ -16,7 +16,7 @@ struct YoutubeMusicView: View {
         VStack {
             switch selectedStreamingService {
             case .spotify:
-                WebView(url: URL(string: "https://open.spotify.com/")!)
+                SpotifyView()
             case .youtubeMusic:
                 WebView(url: URL(string: "https://music.youtube.com/")!)
             }
@@ -30,7 +30,7 @@ struct YoutubeMusicView: View {
     private func handleServiceSelection(for service: StreamingService) {
         switch selectedStreamingService {
         case .spotify:
-            openSpotify()
+            SpotifyView()
         case .youtubeMusic:
             openYouTubeMusic()
         }
