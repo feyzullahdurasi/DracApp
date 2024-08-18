@@ -28,13 +28,6 @@ struct ContactsView: View {
     }
 }
 
-struct YoutubeMusicHomepageView: View {
-    var body: some View {
-        YoutubeMusicHomepageView() // Updated to use the new view
-            
-    }
-}
-
 struct InstagramView: View {
     @Binding var showInstagram: Bool
     

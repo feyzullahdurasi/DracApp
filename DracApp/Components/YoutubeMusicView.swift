@@ -21,32 +21,6 @@ struct YoutubeMusicView: View {
                 WebView(url: URL(string: "https://music.youtube.com/")!)
             }
         }
-        .padding()
-        .onAppear {
-            handleServiceSelection(for: selectedStreamingService)
-        }
-    }
-    
-    private func handleServiceSelection(for service: StreamingService) {
-        switch selectedStreamingService {
-        case .spotify:
-            SpotifyView()
-        case .youtubeMusic:
-            openYouTubeMusic()
-        }
-    }
-
-    private func openSpotify() {
-        let spotifyURL = "spotify://playlist/37i9dQZF1DXcBWIGoYBM5M" // Replace with the desired Spotify URL
-        if let url = URL(string: spotifyURL) {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            } else {
-                if let appStoreURL = URL(string: "https://apps.apple.com/us/app/spotify/id324684580") {
-                    UIApplication.shared.open(appStoreURL)
-                }
-            }
-        }
     }
 
     private func openYouTubeMusic() {

@@ -65,7 +65,7 @@ struct MainView: View {
     
     
     private func portraitLayout(geometry: GeometryProxy) -> some View {
-        VStack(spacing: 10) {
+        VStack {
             Spacer()
             ForEach(Array(viewModel.activeViews), id: \.self) { view in
                 viewForActiveView(view, geometry: geometry)
@@ -81,7 +81,6 @@ struct MainView: View {
                         .background(Color.gray)
                         .clipShape(Circle())
                 }
-                
                 .ignoresSafeArea(.all)
                 .padding(.bottom ,-20)
             }
@@ -98,7 +97,7 @@ struct MainView: View {
                 buttonColumn
             } else {
                 Button(action: toggleButtonBar) {
-                    Image(systemName: "chevron.left" )
+                    Image(systemName: "chevron.left")
                         .font(.system(size: 15))
                         .padding(10)
                         .foregroundColor(.white)
@@ -107,6 +106,7 @@ struct MainView: View {
                 }
             }
         }
+        .padding(.vertical, 5.0)
     }
     
     private func viewForActiveView(_ view: ActiveView, geometry: GeometryProxy) -> some View {
@@ -132,8 +132,8 @@ struct MainView: View {
     
     private func frameSize(for geometry: GeometryProxy) -> CGSize {
             let isLandscape = geometry.size.width > geometry.size.height
-            let width = isLandscape ? (geometry.size.width - (isButtonBarVisible ? 90 : 0)) / CGFloat(viewModel.activeViews.count) : (geometry.size.width)
-            let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 100 : 0)) / CGFloat(viewModel.activeViews.count)
+            let width = isLandscape ? (geometry.size.width - (isButtonBarVisible ? 80 : 20)) / CGFloat(viewModel.activeViews.count) : (geometry.size.width)
+            let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 100 : 10)) / CGFloat(viewModel.activeViews.count)
             return CGSize(width: width, height: height)
         }
     

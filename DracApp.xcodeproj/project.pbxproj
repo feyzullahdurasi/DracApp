@@ -388,6 +388,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DracApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Drac;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Konum izni";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -423,6 +424,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DracApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Drac;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Konum izni";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

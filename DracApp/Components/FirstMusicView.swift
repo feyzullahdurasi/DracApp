@@ -12,8 +12,9 @@ struct FirstMusicView: View {
        
        var body: some View {
            VStack(spacing: 20) {
-               Text("Choose Your Streaming Service")
+               Text("Müzik çalma Hizmetinizi Seçin")
                    .font(.title)
+                   .multilineTextAlignment(.center)
                    .padding()
                
                Button("Spotify") {
