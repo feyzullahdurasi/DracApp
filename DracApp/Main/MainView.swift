@@ -3,11 +3,9 @@ import MapKit
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 41.0082, longitude: 28.9784),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+    @StateObject private var locationManager = LocationManager()
     @State private var selectedCoordinate: CLLocationCoordinate2D?
+    
     @State private var isFirstLaunch: Bool = !UserDefaults.standard.bool(forKey: "isUserInfoSaved")
     @State private var isWelcomeMessageVisible: Bool = true
     @State private var userName: String = ""
@@ -114,7 +112,7 @@ struct MainView: View {
         return Group {
             switch view {
             case .maps:
-                CustomMapView(region: $region, selectedCoordinate: $selectedCoordinate)
+                CustomMapView(region: $locationManager.region, selectedCoordinate: $selectedCoordinate)
             case .contacts:
                 ContactsView(showContacts: .constant(true))
             case .youtubeMusic:
@@ -223,54 +221,6 @@ struct MainView: View {
             }
         }
 }
-
-struct CustomMapView: UIViewRepresentable {
-    @Binding var region: MKCoordinateRegion
-    @Binding var selectedCoordinate: CLLocationCoordinate2D?
-    
-    func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        mapView.delegate = context.coordinator
-        return mapView
-    }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.setRegion(region, animated: true)
-        
-        if let coordinate = selectedCoordinate {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            uiView.addAnnotation(annotation)
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: CustomMapView
-        
-        init(_ parent: CustomMapView) {
-            self.parent = parent
-        }
-        
-        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            guard let annotation = view.annotation else { return }
-            
-            // Yol tarifi almak için `MKMapItem` oluşturuluyor
-            let placemark = MKPlacemark(coordinate: annotation.coordinate)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "Destination"
-            
-            let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            
-            // Yol tarifi almak için Maps uygulamasını açma
-            mapItem.openInMaps(launchOptions: options)
-        }
-    }
-}
-
 
 #Preview {
     MainView()

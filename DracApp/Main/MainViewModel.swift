@@ -52,4 +52,5 @@ class MainViewModel: ObservableObject {
 enum StreamingService {
     case spotify
     case youtubeMusic
+    case appleMusic
 }

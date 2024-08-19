@@ -38,11 +38,13 @@ struct SettingsView: View {
                     
                     Button("Chose Theme") {
                         changeTheme.toggle()
-                    }.preferredColorScheme(userTheme.colorSheme)
+                    }
+                    .preferredColorScheme(userTheme.colorSheme)
                     
                     Picker(selection: $selectedStreamingService, label: Text("Streaming Service")) {
                         Text("YouTube Music").tag(StreamingService.youtubeMusic)
                         Text("Spotify").tag(StreamingService.spotify)
+                        Text("Apple Music").tag(StreamingService.appleMusic)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .onChange(of: selectedStreamingService) { newValue in
@@ -52,6 +54,8 @@ struct SettingsView: View {
                             serviceString = "spotify"
                         case .youtubeMusic:
                             serviceString = "youtubeMusic"
+                        case .appleMusic:
+                            serviceString = "appleMusic"
                         }
                         UserDefaults.standard.set(serviceString, forKey: "preferredStreamingService")
                     }

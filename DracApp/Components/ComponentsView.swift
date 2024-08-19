@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct GenericView: View {
     @Binding var isShowing: Bool
@@ -36,14 +35,3 @@ struct InstagramView: View {
     }
 }
 
-struct MapView: UIViewRepresentable {
-    @Binding var region: MKCoordinateRegion
-    
-    func makeUIView(context: Context) -> MKMapView {
-        MKMapView()
-    }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.setRegion(region, animated: true)
-    }
-}

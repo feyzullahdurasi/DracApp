@@ -8,15 +8,15 @@
 import CoreLocation
 import Combine
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private let locationManager = CLLocationManager()
+class LocationManager1: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private let locationManager1 = CLLocationManager()
     @Published var speed: Double = 0.0
 
     override init() {
         super.init()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager1.delegate = self
+        locationManager1.requestWhenInUseAuthorization()
+        locationManager1.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

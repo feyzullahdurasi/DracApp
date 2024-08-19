@@ -1,14 +1,14 @@
 //
-//  YoutubeMusicView.swift
+//  MusicView.swift
 //  DracApp
 //
-//  Created by Feyzullah Durası on 10.08.2024.
+//  Created by Feyzullah Durası on 19.08.2024.
 //
 
 import SwiftUI
 import WebKit
 
-struct YoutubeMusicView: View {
+struct MusicView: View {
     
     var selectedStreamingService: StreamingService
     
@@ -18,7 +18,9 @@ struct YoutubeMusicView: View {
             case .spotify:
                 SpotifyView()
             case .youtubeMusic:
-                WebView(url: URL(string: "https://music.youtube.com/")!)
+                YoutubeMusicView()
+            case .appleMusic:
+                AppleMusicView()
             }
         }
     }
@@ -51,6 +53,6 @@ struct WebView: UIViewRepresentable {
 }
 
 #Preview {
-    YoutubeMusicView(selectedStreamingService: .spotify)
+    MusicView(selectedStreamingService: .spotify)
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeMessageView: View {
     @Binding var isVisible: Bool
     var userName: String
+    @AppStorage("userTheme") private var userTheme: Theme = .systemDefault
 
     var body: some View {
         VStack {

@@ -12,7 +12,7 @@ struct FirstMusicView: View {
        
        var body: some View {
            VStack(spacing: 20) {
-               Text("Müzik çalma Hizmetinizi Seçin")
+               Text("Müzik çalma hizmetinizi Seçin")
                    .font(.title)
                    .multilineTextAlignment(.center)
                    .padding()
@@ -34,6 +34,15 @@ struct FirstMusicView: View {
                .background(Color.red)
                .foregroundColor(.white)
                .cornerRadius(10)
+               
+               Button("Apple Music") {
+                   saveUserPreference(service: .appleMusic)
+                   isShowingFirstLaunchView = false
+               }
+               .padding()
+               .background(Color.red)
+               .foregroundColor(.white)
+               .cornerRadius(10)
            }
            .padding()
        }
@@ -45,6 +54,8 @@ struct FirstMusicView: View {
                serviceString = "spotify"
            case .youtubeMusic:
                serviceString = "youtubeMusic"
+           case .appleMusic:
+               serviceString = "appleMusic"
            }
            UserDefaults.standard.set(serviceString, forKey: "preferredStreamingService")
        }

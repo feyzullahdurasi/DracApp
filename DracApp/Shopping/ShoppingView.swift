@@ -20,11 +20,11 @@ struct ShoppingView: View {
                 }
             }
             .padding() // Opsiyonel: ScrollView etrafında boşluk ekler
+            .navigationTitle("Shopping")
+            .navigationBarItems(trailing: Button("Kapat") {
+                isShowingShop = false
+            })
         }
-        .navigationTitle("Shopping")
-        .navigationBarItems(trailing: Button("Kapat") {
-            isShowingShop = false
-        })
     }
 }
 
