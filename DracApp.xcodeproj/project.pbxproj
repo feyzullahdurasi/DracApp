@@ -13,6 +13,9 @@
 		650C4E902C5D171D003F2566 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */; };
 		653735FA2C60B35700A91D97 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653735F92C60B35700A91D97 /* ComponentsView.swift */; };
 		653735FC2C60B39000A91D97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653735FB2C60B39000A91D97 /* MainViewModel.swift */; };
+		653BB6A72C76007500C0E7F8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB6A62C76007500C0E7F8 /* DataService.swift */; };
+		658545DB2C76763800E368AD /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658545DA2C76763800E368AD /* VideoDetailView.swift */; };
+		658545DE2C76782C00E368AD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 658545DD2C76782C00E368AD /* YouTubePlayerKit */; };
 		658B67E02C66132000BED98B /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67DF2C66132000BED98B /* SpeedView.swift */; };
 		658B67E22C66176200BED98B /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E12C66176200BED98B /* ThemeChangeView.swift */; };
 		658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67E52C6760E000BED98B /* YoutubeMusicView.swift */; };
@@ -42,6 +45,9 @@
 		650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		653735F92C60B35700A91D97 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		653735FB2C60B39000A91D97 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		653BB6A42C75F49300C0E7F8 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		653BB6A62C76007500C0E7F8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		658545DA2C76763800E368AD /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		658B67DF2C66132000BED98B /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
 		658B67E12C66176200BED98B /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
 		658B67E52C6760E000BED98B /* YoutubeMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMusicView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658545DE2C76782C00E368AD /* YouTubePlayerKit in Frameworks */,
 				658B67EF2C6A24D000BED98B /* SpotifyiOS.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,12 +109,14 @@
 				658B67E32C67608800BED98B /* Components */,
 				658B67E42C6760A600BED98B /* Setting */,
 				65E01F0D2C63B32F000D0780 /* LocationManager.swift */,
+				653BB6A52C76005300C0E7F8 /* Services */,
 				658B67EB2C68A57D00BED98B /* Shopping */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
 				658B67F32C6A2BFA00BED98B /* Constants.swift */,
 				658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */,
 				650C4E8E2C5D171D003F2566 /* Preview Content */,
 				658B67F02C6A25D600BED98B /* DracApp-Bridging-Header.h */,
+				653BB6A42C75F49300C0E7F8 /* Config.xcconfig */,
 			);
 			path = DracApp;
 			sourceTree = "<group>";
@@ -118,6 +127,14 @@
 				650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		653BB6A52C76005300C0E7F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				653BB6A62C76007500C0E7F8 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		658B67E32C67608800BED98B /* Components */ = {
@@ -174,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				658B67E52C6760E000BED98B /* YoutubeMusicView.swift */,
+				658545DA2C76763800E368AD /* VideoDetailView.swift */,
 				65B87E642C73DD69002047F8 /* YoutubeMusicViewModel.swift */,
 			);
 			path = Youtube;
@@ -213,6 +231,9 @@
 			dependencies = (
 			);
 			name = DracApp;
+			packageProductDependencies = (
+				658545DD2C76782C00E368AD /* YouTubePlayerKit */,
+			);
 			productName = DracApp;
 			productReference = 650C4E852C5D171D003F2566 /* DracApp.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 650C4E7C2C5D171C003F2566;
+			packageReferences = (
+				658545DC2C76782C00E368AD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 650C4E862C5D171D003F2566 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,6 +297,7 @@
 				65CA7EBA2C613E5F003BCE79 /* SettingsView.swift in Sources */,
 				653735FA2C60B35700A91D97 /* ComponentsView.swift in Sources */,
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
+				653BB6A72C76007500C0E7F8 /* DataService.swift in Sources */,
 				658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
 				65B87E652C73DD69002047F8 /* YoutubeMusicViewModel.swift in Sources */,
@@ -280,6 +305,7 @@
 				658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
 				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,
+				658545DB2C76763800E368AD /* VideoDetailView.swift in Sources */,
 				658B67F82C6A6E0900BED98B /* SpotifyView.swift in Sources */,
 				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,
 				65B87E672C73DECA002047F8 /* MusicView.swift in Sources */,
@@ -298,6 +324,7 @@
 /* Begin XCBuildConfiguration section */
 		650C4E912C5D171D003F2566 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 653BB6A42C75F49300C0E7F8 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -361,6 +388,7 @@
 		};
 		650C4E922C5D171D003F2566 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 653BB6A42C75F49300C0E7F8 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -508,6 +536,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		658545DC2C76782C00E368AD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		658545DD2C76782C00E368AD /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 658545DC2C76782C00E368AD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 650C4E7D2C5D171C003F2566 /* Project object */;
 }

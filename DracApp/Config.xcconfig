@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  DracApp
+//
+//  Created by Feyzullah Durası on 21.08.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = AIzaSyAr_Mt1dNZkncYUG9D1teKL9OLhG5cHMws

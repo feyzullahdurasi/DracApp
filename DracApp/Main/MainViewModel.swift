@@ -8,7 +8,7 @@
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var activeViews: Set<ActiveView> = [.maps, .youtubeMusic]  // Varsayılan olarak iki ekran açık
+    @Published var activeViews: Set<ActiveView> = [.maps, .music]  // Varsayılan olarak iki ekran açık
     private let maxActiveViews = 2  // Maksimum aktif görünüm sayısı
 
     func toggleView(_ view: ActiveView) {
@@ -39,7 +39,7 @@ class MainViewModel: ObservableObject {
                 case "maps":
                     toggleView(.maps)
                 case "youtubeMusic":
-                    toggleView(.youtubeMusic)
+                    toggleView(.music)
                 default:
                     break
                 }

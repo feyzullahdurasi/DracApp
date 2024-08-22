@@ -115,8 +115,8 @@ struct MainView: View {
                 CustomMapView(region: $locationManager.region, selectedCoordinate: $selectedCoordinate)
             case .contacts:
                 ContactsView(showContacts: .constant(true))
-            case .youtubeMusic:
-                YoutubeMusicView(selectedStreamingService: selectedStreamingService)
+            case .music:
+                MusicView(selectedStreamingService: selectedStreamingService)
             case .instagram:
                 InstagramView(showInstagram: .constant(true))
             case .speed:
