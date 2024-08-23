@@ -26,12 +26,12 @@ struct SettingsView: View {
                         Text("mph").tag(1)
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: speedUnitIndex) { newValue in
+                    .onChange(of: speedUnitIndex) { newValue, a in
                         UserDefaults.standard.set(newValue, forKey: "speedUnitIndex")
                     }
                     
                     Toggle("Bildirimler", isOn: $areNotificationsEnabled)
-                        .onChange(of: areNotificationsEnabled) { newValue in
+                        .onChange(of: areNotificationsEnabled) { newValue, a in
                             // Bildirimler ayarını UserDefaults'a kaydet
                             UserDefaults.standard.set(newValue, forKey: "areNotificationsEnabled")
                         }
@@ -45,9 +45,10 @@ struct SettingsView: View {
                         Text("YouTube Music").tag(StreamingService.youtubeMusic)
                         Text("Spotify").tag(StreamingService.spotify)
                         Text("Apple Music").tag(StreamingService.appleMusic)
+                        Text("Radio").tag(StreamingService.appleMusic)
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: selectedStreamingService) { newValue in
+                    .onChange(of: selectedStreamingService) { newValue, a in
                         let serviceString: String
                         switch newValue {
                         case .spotify:
@@ -56,6 +57,8 @@ struct SettingsView: View {
                             serviceString = "youtubeMusic"
                         case .appleMusic:
                             serviceString = "appleMusic"
+                        case .radio:
+                            serviceString = "radio"
                         }
                         UserDefaults.standard.set(serviceString, forKey: "preferredStreamingService")
                     }

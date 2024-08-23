@@ -56,6 +56,8 @@ struct FirstMusicView: View {
                serviceString = "youtubeMusic"
            case .appleMusic:
                serviceString = "appleMusic"
+           case .radio:
+               serviceString = "radio"
            }
            UserDefaults.standard.set(serviceString, forKey: "preferredStreamingService")
        }

@@ -53,4 +53,5 @@ enum StreamingService {
     case spotify
     case youtubeMusic
     case appleMusic
+    case radio
 }

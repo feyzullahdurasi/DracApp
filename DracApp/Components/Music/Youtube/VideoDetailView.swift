@@ -15,7 +15,7 @@ struct VideoDetailView: View {
         GeometryReader { proxy in
             VStack (alignment: .leading) {
                 let youTubePlayer = YouTubePlayer(
-                    source: .video(id: video.videoId),
+                    source: .video(id: video.thumbnailURL),
                     configuration: .init(
                         autoPlay: true
                     )

@@ -11,9 +11,10 @@
 		650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C4E8A2C5D171D003F2566 /* MainView.swift */; };
 		650C4E8D2C5D171D003F2566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650C4E8C2C5D171D003F2566 /* Assets.xcassets */; };
 		650C4E902C5D171D003F2566 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */; };
+		651A1E482C7868B500AB71B0 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A1E472C7868B500AB71B0 /* BluetoothManager.swift */; };
 		653735FA2C60B35700A91D97 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653735F92C60B35700A91D97 /* ComponentsView.swift */; };
 		653735FC2C60B39000A91D97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653735FB2C60B39000A91D97 /* MainViewModel.swift */; };
-		653BB6A72C76007500C0E7F8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB6A62C76007500C0E7F8 /* DataService.swift */; };
+		653BB6A72C76007500C0E7F8 /* YouTubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB6A62C76007500C0E7F8 /* YouTubeAPI.swift */; };
 		658545DB2C76763800E368AD /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658545DA2C76763800E368AD /* VideoDetailView.swift */; };
 		658545DE2C76782C00E368AD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 658545DD2C76782C00E368AD /* YouTubePlayerKit */; };
 		658B67E02C66132000BED98B /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67DF2C66132000BED98B /* SpeedView.swift */; };
@@ -35,6 +36,8 @@
 		65DC9B082C721C810025CC7D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC9B072C721C810025CC7D /* MapView.swift */; };
 		65DC9B0A2C735E6C0025CC7D /* AppleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC9B092C735E6C0025CC7D /* AppleMusicView.swift */; };
 		65E01F0E2C63B32F000D0780 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E01F0D2C63B32F000D0780 /* LocationManager.swift */; };
+		65FC2FF42C776AFB00D9C068 /* SleepModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC2FF32C776AFB00D9C068 /* SleepModeView.swift */; };
+		65FC2FF62C7776CD00D9C068 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC2FF52C7776CD00D9C068 /* RadioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +46,11 @@
 		650C4E8A2C5D171D003F2566 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		650C4E8C2C5D171D003F2566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		650C4E8F2C5D171D003F2566 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		651A1E472C7868B500AB71B0 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		653735F92C60B35700A91D97 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		653735FB2C60B39000A91D97 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		653BB6A42C75F49300C0E7F8 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		653BB6A62C76007500C0E7F8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		653BB6A62C76007500C0E7F8 /* YouTubeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeAPI.swift; sourceTree = "<group>"; };
 		658545DA2C76763800E368AD /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		658B67DF2C66132000BED98B /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
 		658B67E12C66176200BED98B /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		65DC9B072C721C810025CC7D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		65DC9B092C735E6C0025CC7D /* AppleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicView.swift; sourceTree = "<group>"; };
 		65E01F0D2C63B32F000D0780 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		65FC2FF32C776AFB00D9C068 /* SleepModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepModeView.swift; sourceTree = "<group>"; };
+		65FC2FF52C7776CD00D9C068 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +111,9 @@
 				650C4E882C5D171D003F2566 /* DracAppApp.swift */,
 				65E01F0A2C63799C000D0780 /* Main */,
 				65E01F0B2C6393B8000D0780 /* Begin */,
-				659465412C5E7C0300D58326 /* ActiveView.swift */,
 				658B67E32C67608800BED98B /* Components */,
-				658B67E42C6760A600BED98B /* Setting */,
 				65E01F0D2C63B32F000D0780 /* LocationManager.swift */,
 				653BB6A52C76005300C0E7F8 /* Services */,
-				658B67EB2C68A57D00BED98B /* Shopping */,
 				650C4E8C2C5D171D003F2566 /* Assets.xcassets */,
 				658B67F32C6A2BFA00BED98B /* Constants.swift */,
 				658B67EE2C6A24D000BED98B /* SpotifyiOS.xcframework */,
@@ -132,7 +135,7 @@
 		653BB6A52C76005300C0E7F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				653BB6A62C76007500C0E7F8 /* DataService.swift */,
+				653BB6A62C76007500C0E7F8 /* YouTubeAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -144,6 +147,9 @@
 				65B87E612C73DCDC002047F8 /* Music */,
 				658B67DF2C66132000BED98B /* SpeedView.swift */,
 				65DC9B072C721C810025CC7D /* MapView.swift */,
+				658B67E42C6760A600BED98B /* Setting */,
+				658B67EB2C68A57D00BED98B /* Shopping */,
+				65FC2FF22C776AC800D9C068 /* SleepMode */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -169,9 +175,10 @@
 		65B87E612C73DCDC002047F8 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				65DC9B092C735E6C0025CC7D /* AppleMusicView.swift */,
 				658B67E72C67C7F000BED98B /* FirstMusicView.swift */,
 				65B87E662C73DECA002047F8 /* MusicView.swift */,
+				65DC9B092C735E6C0025CC7D /* AppleMusicView.swift */,
+				65FC2FF52C7776CD00D9C068 /* RadioView.swift */,
 				65B87E632C73DD26002047F8 /* Youtube */,
 				65B87E622C73DCFF002047F8 /* Spotify */,
 			);
@@ -202,6 +209,8 @@
 			children = (
 				650C4E8A2C5D171D003F2566 /* MainView.swift */,
 				653735FB2C60B39000A91D97 /* MainViewModel.swift */,
+				659465412C5E7C0300D58326 /* ActiveView.swift */,
+				651A1E472C7868B500AB71B0 /* BluetoothManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -213,6 +222,14 @@
 				65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */,
 			);
 			path = Begin;
+			sourceTree = "<group>";
+		};
+		65FC2FF22C776AC800D9C068 /* SleepMode */ = {
+			isa = PBXGroup;
+			children = (
+				65FC2FF32C776AFB00D9C068 /* SleepModeView.swift */,
+			);
+			path = SleepMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +314,9 @@
 				65CA7EBA2C613E5F003BCE79 /* SettingsView.swift in Sources */,
 				653735FA2C60B35700A91D97 /* ComponentsView.swift in Sources */,
 				659465422C5E7C0300D58326 /* ActiveView.swift in Sources */,
-				653BB6A72C76007500C0E7F8 /* DataService.swift in Sources */,
+				653BB6A72C76007500C0E7F8 /* YouTubeAPI.swift in Sources */,
+				65FC2FF62C7776CD00D9C068 /* RadioView.swift in Sources */,
+				651A1E482C7868B500AB71B0 /* BluetoothManager.swift in Sources */,
 				658B67EA2C68A4D800BED98B /* ShoppingView.swift in Sources */,
 				658B67E02C66132000BED98B /* SpeedView.swift in Sources */,
 				65B87E652C73DD69002047F8 /* YoutubeMusicViewModel.swift in Sources */,
@@ -305,6 +324,7 @@
 				658B67F42C6A2BFA00BED98B /* Constants.swift in Sources */,
 				65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */,
 				658B67E62C6760E000BED98B /* YoutubeMusicView.swift in Sources */,
+				65FC2FF42C776AFB00D9C068 /* SleepModeView.swift in Sources */,
 				658545DB2C76763800E368AD /* VideoDetailView.swift in Sources */,
 				658B67F82C6A6E0900BED98B /* SpotifyView.swift in Sources */,
 				650C4E8B2C5D171D003F2566 /* MainView.swift in Sources */,

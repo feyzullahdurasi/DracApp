@@ -13,9 +13,10 @@ struct MainView: View {
     @State private var isButtonBarVisible: Bool = false
     @State private var isButtonBarVisible1: Bool = false
     @State private var showActionSheet = false
-    @State private var selectedStreamingService: StreamingService = .youtubeMusic
+    @State private var selectedStreamingService: StreamingService = .spotify
     @State private var isShowingShopping = false
-    
+    @State private var isShowingSleepMode = false
+
     var body: some View {
         ZStack {
             if isFirstLaunch {
@@ -59,11 +60,15 @@ struct MainView: View {
         .fullScreenCover(isPresented: $isShowingShopping){
             ShoppingView(isShowingShop: $isShowingShopping)
         }
+        .fullScreenCover(isPresented: $isShowingSleepMode){
+            SleepModeView(isShowingSleepMode: $isShowingSleepMode)
+        }
     }
     
     
     private func portraitLayout(geometry: GeometryProxy) -> some View {
         VStack {
+            
             Spacer()
             ForEach(Array(viewModel.activeViews), id: \.self) { view in
                 viewForActiveView(view, geometry: geometry)
@@ -139,6 +144,16 @@ struct MainView: View {
         ScrollView (.horizontal){
             HStack(spacing: 20) {
                 Spacer()
+                Button(action: {
+                    isShowingSleepMode = true
+                }) {
+                    Image(systemName: "power")
+                        .font(.system(size: 30))
+                        .padding()
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
                 ForEach(ActiveView.allCases, id: \.self) { view in
                     buttonView(for: view)
                 }

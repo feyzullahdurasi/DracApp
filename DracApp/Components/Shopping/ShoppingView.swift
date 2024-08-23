@@ -17,10 +17,10 @@ struct ShoppingView: View {
                     // 5 kere tekrar eden ShoppingItemView
                     ForEach(0..<5) { _ in
                         ShoppingItemView()
-                            .padding() // Opsiyonel: Her bir öğe arasında boşluk ekler
+                            .padding() 
                     }
                 }
-                .padding() // Opsiyonel: ScrollView etrafında boşluk ekler
+                .padding()
                 .navigationTitle("Shopping")
                 .navigationBarItems(trailing: Button("Kapat") {
                     isShowingShop = false

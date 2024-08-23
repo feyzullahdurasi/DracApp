@@ -21,19 +21,8 @@ struct MusicView: View {
                 YoutubeMusicView()
             case .appleMusic:
                 AppleMusicView()
-            }
-        }
-    }
-
-    private func openYouTubeMusic() {
-        let youtubeMusicURL = "youtube-music://playlist/PL9tY0BWXOZFvK2DH1i18zHSjeaRY91I04" // Replace with the desired YouTube Music URL
-        if let url = URL(string: youtubeMusicURL) {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            } else {
-                if let appStoreURL = URL(string: "https://apps.apple.com/us/app/youtube-music/id1017492454") {
-                    UIApplication.shared.open(appStoreURL)
-                }
+            case .radio:
+                RadioView()
             }
         }
     }
