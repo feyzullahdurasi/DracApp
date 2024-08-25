@@ -10,7 +10,7 @@ import CoreLocation
 
 struct SpeedView: View {
     @Binding var showSpeed: Bool
-    @StateObject private var locationManager1 = LocationManager1()
+    @StateObject private var locationManager = LocationManager()
     @State private var timer: Timer?
     @State private var secondsRemaining = 5
     @State private var elapsedTime: TimeInterval = 0
@@ -161,7 +161,7 @@ struct SpeedView: View {
     }
     
     private func getSpeedText() -> String {
-        let speedInKph = locationManager1.speed
+        let speedInKph = locationManager.speed
         let speedInMph = speedInKph * 0.621371
         
         if speedUnitIndex == 0 {

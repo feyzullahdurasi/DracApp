@@ -16,7 +16,7 @@ struct MainView: View {
     @State private var selectedStreamingService: StreamingService = .spotify
     @State private var isShowingShopping = false
     @State private var isShowingSleepMode = false
-
+    
     var body: some View {
         ZStack {
             if isFirstLaunch {
@@ -85,7 +85,7 @@ struct MainView: View {
                         .clipShape(Circle())
                 }
                 .ignoresSafeArea(.all)
-                .padding(.bottom ,-20)
+                .padding(.bottom ,-12)
             }
         }
     }
@@ -117,7 +117,7 @@ struct MainView: View {
         return Group {
             switch view {
             case .maps:
-                CustomMapView(region: $locationManager.region, selectedCoordinate: $selectedCoordinate)
+                MapView()
             case .contacts:
                 ContactsView(showContacts: .constant(true))
             case .music:
@@ -134,11 +134,11 @@ struct MainView: View {
     }
     
     private func frameSize(for geometry: GeometryProxy) -> CGSize {
-            let isLandscape = geometry.size.width > geometry.size.height
-            let width = isLandscape ? (geometry.size.width - (isButtonBarVisible ? 80 : 20)) / CGFloat(viewModel.activeViews.count) : (geometry.size.width)
-            let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 100 : 10)) / CGFloat(viewModel.activeViews.count)
-            return CGSize(width: width, height: height)
-        }
+        let isLandscape = geometry.size.width > geometry.size.height
+        let width = isLandscape ? (geometry.size.width - (isButtonBarVisible ? 80 : 20)) / CGFloat(viewModel.activeViews.count) : (geometry.size.width)
+        let height = isLandscape ? (geometry.size.height ) : (geometry.size.height - (isButtonBarVisible ? 100 : 10)) / CGFloat(viewModel.activeViews.count)
+        return CGSize(width: width, height: height)
+    }
     
     private var buttonBar: some View {
         ScrollView (.horizontal){
@@ -231,10 +231,10 @@ struct MainView: View {
     }
     
     private func toggleButtonBar() {
-            withAnimation {
-                isButtonBarVisible.toggle()
-            }
+        withAnimation {
+            isButtonBarVisible.toggle()
         }
+    }
 }
 
 #Preview {
