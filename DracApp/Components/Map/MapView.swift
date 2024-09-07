@@ -21,7 +21,7 @@ struct MapView: View {
     
     var body: some View {
         VStack {
-            Map(position: $cameraPosition) {
+            Map(position: $cameraPosition, selection: $mapSelection) {
                 Annotation("My Location", coordinate: .userLocation) {
                     ZStack {
                         Circle()
@@ -53,7 +53,7 @@ struct MapView: View {
                     .padding()
                     .shadow(radius: 10)
             }
-            .onSubmit {
+            .onSubmit(of: .text) {
                 Task { await searchPlaces() }
             }
             .onChange(of: getDirections, { oldValue, newValue in
@@ -152,7 +152,15 @@ extension MapView {
 
 extension CLLocationCoordinate2D {
     static var userLocation: CLLocationCoordinate2D {
-        return .init(latitude: 25.7602, longitude: -80.1959)
+        let latitude = 25.7602
+        let longitude = -80.1959
+        
+        guard latitude.isFinite && longitude.isFinite else {
+            // Hata durumunda bir varsayılan değer döndürebilir veya bir hata fırlatabilirsiniz
+            return CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        }
+        
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
 

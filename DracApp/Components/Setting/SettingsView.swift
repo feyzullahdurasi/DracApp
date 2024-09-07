@@ -16,6 +16,7 @@ struct SettingsView: View {
     @State private var userName: String = UserDefaults.standard.string(forKey: "userName") ?? ""
     @State private var isEditingUserName: Bool = false
     @State private var speedUnitIndex: Int = UserDefaults.standard.integer(forKey: "speedUnitIndex")
+    //@State private var selectedLanguage: Language = Language(rawValue: UserDefaults.standard.string(forKey: "selectedLanguage") ?? "English") ?? .english
     
     var body: some View {
         NavigationStack {
@@ -30,7 +31,7 @@ struct SettingsView: View {
                         UserDefaults.standard.set(newValue, forKey: "speedUnitIndex")
                     }
                     
-                    Toggle("Bildirimler", isOn: $areNotificationsEnabled)
+                    Toggle("Notifications", isOn: $areNotificationsEnabled)
                         .onChange(of: areNotificationsEnabled) { newValue, _ in
                             // Bildirimler ayarını UserDefaults'a kaydet
                             UserDefaults.standard.set(newValue, forKey: "areNotificationsEnabled")
@@ -47,7 +48,7 @@ struct SettingsView: View {
                         Text("Apple Music").tag(StreamingService.appleMusic)
                         Text("Radio").tag(StreamingService.appleMusic)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                    //.pickerStyle(SegmentedPickerStyle())
                     .onChange(of: selectedStreamingService) { newValue, _ in
                         let serviceString: String
                         switch newValue {
@@ -64,10 +65,22 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: Text("Hesap")) {
+                /*Section(header: Text("Dil Ayarı")) {
+                    Picker("Select Language", selection: $selectedLanguage) {
+                        ForEach(Language.allCases) { language in
+                            Text(language.displayName).tag(language)
+                        }
+                    }
+                    .onChange(of: selectedLanguage) { newValue, _ in
+                        UserDefaults.standard.set(newValue.rawValue, forKey: "selectedLanguage")
+                        // Dil değişimi işlemleri burada yapılabilir
+                    }
+                }*/
+                
+                Section(header: Text("User Account")) {
                     HStack {
                         if isEditingUserName {
-                            TextField("Kullanıcı Adı", text: $userName, onCommit: {
+                            TextField("User name", text: $userName, onCommit: {
                                 // Kullanıcı adı değiştiğinde UserDefaults'a kaydet
                                 UserDefaults.standard.set(userName, forKey: "userName")
                                 isEditingUserName = false
@@ -75,18 +88,18 @@ struct SettingsView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             
                         } else {
-                            Text("Kullanıcı Adı: \(userName)")
+                            Text("User Name: \(userName)")
                                 .padding()
                             Spacer()
-                            Button("Düzenle") {
+                            Button("Edit") {
                                 isEditingUserName = true
                             }
                         }
                     }
                     
-                    Button("Çıkış Yap") {
+                    Button("Log Out") {
                         // Çıkış yapma işlemini burada yönetebilirsiniz
-                        print("Çıkış yap butonuna tıklandı")
+                        print("The logout button was clicked")
                         // UserDefaults'tan kullanıcı bilgilerini temizleyebilirsiniz
                         UserDefaults.standard.removeObject(forKey: "userName")
                         userName = "" // Kullanıcı adı state'ini sıfırla
@@ -94,7 +107,7 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
-            .navigationBarItems(trailing: Button("Kapat") {
+            .navigationBarItems(trailing: Button("Close") {
                 isShowing = false
             })
         }.sheet(isPresented: $changeTheme, content: {
@@ -125,3 +138,26 @@ enum Theme : String, CaseIterable {
         }
     }
 }
+/*
+enum Language: String, CaseIterable, Identifiable {
+    case english = "English"
+    case turkish = "Türkçe"
+    case german = "Deutsch"
+    case french = "Français"
+    
+    var id: String { self.rawValue }
+    
+    // Display adını yerelleştir
+    var displayName: LocalizedStringKey {
+        switch self {
+        case .english:
+            return LocalizedStringKey("english")
+        case .turkish:
+            return LocalizedStringKey("turkish")
+        case .german:
+            return LocalizedStringKey("german")
+        case .french:
+            return LocalizedStringKey("french")
+        }
+    }
+}*/

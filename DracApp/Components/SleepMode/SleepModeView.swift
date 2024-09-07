@@ -22,7 +22,6 @@ struct SleepModeView: View {
                 AnalogClockView()
                     .frame(width: 200, height: 200)
             }
-            .navigationTitle("Sleep Mode")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

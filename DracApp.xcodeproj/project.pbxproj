@@ -29,6 +29,7 @@
 		658B67F62C6A525200BED98B /* SpotifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F52C6A525200BED98B /* SpotifyViewModel.swift */; };
 		658B67F82C6A6E0900BED98B /* SpotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B67F72C6A6E0900BED98B /* SpotifyView.swift */; };
 		659465422C5E7C0300D58326 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465412C5E7C0300D58326 /* ActiveView.swift */; };
+		65AF5B462C8C568700098D6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65AF5B442C8C568700098D6F /* Localizable.strings */; };
 		65B87E652C73DD69002047F8 /* YoutubeMusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B87E642C73DD69002047F8 /* YoutubeMusicViewModel.swift */; };
 		65B87E672C73DECA002047F8 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B87E662C73DECA002047F8 /* MusicView.swift */; };
 		65CA7EB62C6113A5003BCE79 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */; };
@@ -66,6 +67,8 @@
 		658B67F52C6A525200BED98B /* SpotifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewModel.swift; sourceTree = "<group>"; };
 		658B67F72C6A6E0900BED98B /* SpotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyView.swift; sourceTree = "<group>"; };
 		659465412C5E7C0300D58326 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
+		65AF5B452C8C568700098D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65AF5B472C8C572800098D6F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65B87E642C73DD69002047F8 /* YoutubeMusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMusicViewModel.swift; sourceTree = "<group>"; };
 		65B87E662C73DECA002047F8 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		65CA7EB52C6113A5003BCE79 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 		65DC9B072C721C810025CC7D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		65DC9B092C735E6C0025CC7D /* AppleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicView.swift; sourceTree = "<group>"; };
 		65E01F0D2C63B32F000D0780 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		65F5AECF2C8CAAA7004DF9EB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65F5AED02C8CAB4F004DF9EB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65FC2FF32C776AFB00D9C068 /* SleepModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepModeView.swift; sourceTree = "<group>"; };
 		65FC2FF52C7776CD00D9C068 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +166,7 @@
 				658B67E42C6760A600BED98B /* Setting */,
 				658B67EB2C68A57D00BED98B /* Shopping */,
 				65FC2FF22C776AC800D9C068 /* SleepMode */,
+				65AF5B442C8C568700098D6F /* Localizable.strings */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -289,6 +295,9 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
+				de,
+				fr,
 			);
 			mainGroup = 650C4E7C2C5D171C003F2566;
 			packageReferences = (
@@ -308,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AF5B462C8C568700098D6F /* Localizable.strings in Resources */,
 				650C4E902C5D171D003F2566 /* Preview Assets.xcassets in Resources */,
 				650C4E8D2C5D171D003F2566 /* Assets.xcassets in Resources */,
 			);
@@ -353,6 +363,20 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		65AF5B442C8C568700098D6F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65AF5B452C8C568700098D6F /* en */,
+				65AF5B472C8C572800098D6F /* tr */,
+				65F5AECF2C8CAAA7004DF9EB /* de */,
+				65F5AED02C8CAB4F004DF9EB /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		650C4E912C5D171D003F2566 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -360,6 +384,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -424,6 +449,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

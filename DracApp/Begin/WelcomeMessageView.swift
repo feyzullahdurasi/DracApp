@@ -15,7 +15,7 @@ struct WelcomeMessageView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Merhaba, \(userName)!")
+            Text("Hello , \(userName)!")
                 .font(.largeTitle)
                 .padding()
                 .background(Color.black.opacity(0.5))

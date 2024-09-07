@@ -12,7 +12,7 @@ struct FirstMusicView: View {
        
        var body: some View {
            VStack(spacing: 20) {
-               Text("Müzik çalma hizmetinizi Seçin")
+               Text("Choose your music playback service")
                    .font(.title)
                    .multilineTextAlignment(.center)
                    .padding()

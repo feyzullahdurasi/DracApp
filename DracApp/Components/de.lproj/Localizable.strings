@@ -1,0 +1,35 @@
+/* 
+  Language.strings
+  DracApp
+
+  Created by Feyzullah Durası on 7.09.2024.
+  
+*/
+
+"Select Language" = "Sprache wählen";
+"Current Speed" = "Aktuelle Geschwindigkeit";
+"Start" = "Starten";
+"Hello , %@!" = "Hallo, %@!";
+"Please enter your information to get started." = "Bitte geben Sie Ihre Informationen ein, um zu beginnen.";
+"Name" = "Name";
+"Both fields are required." = "Beide Felder sind erforderlich.";
+"Sign Up" = "Registrieren";
+"Choose your music playback service" = "Wählen Sie Ihren Musik-Wiedergabedienst";
+"YouTube Music" = "YouTube Musik";
+"Apple Music" = "Apple Musik";
+"Bluetooth Radio Data" = "Bluetooth-Radio-Daten";
+"Search for location..." = "Ort suchen...";
+"Open in Maps" = "In Karten öffnen";
+"Appearance" = "Aussehen";
+"Notifications" = "Benachrichtigungen";
+"Chose Theme" = "Thema wählen";
+"Streaming Service" = "Streaming-Dienst";
+"Radio" = "Radio";
+"User Account" = "Benutzerkonto";
+"User name" = "Benutzername";
+"Edit" = "Bearbeiten";
+"User Name: " = "Benutzername: ";
+"Settings" = "Einstellungen";
+"Close" = "Schließen";
+"Log Out" = "Abmelden";
+"Choose a style" = "Wählen Sie einen Stil";

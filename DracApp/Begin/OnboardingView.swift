@@ -20,10 +20,10 @@ struct OnboardingView: View {
                 .font(.largeTitle)
                 .padding()
 
-            Text("Başlamak için lütfen bilgilerinizi girin.")
+            Text("Please enter your information to get started.")
                 .padding()
 
-            TextField("İsim", text: $name)
+            TextField("Name", text: $name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
@@ -40,7 +40,7 @@ struct OnboardingView: View {
                     .padding()
             }
 
-            Button("Kayıt Ol") {
+            Button("Sign Up") {
                 if name.isEmpty {
                     isNameEmpty = true
                 } else {

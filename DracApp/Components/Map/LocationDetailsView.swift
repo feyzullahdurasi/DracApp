@@ -65,10 +65,8 @@ struct LocationDetailsView: View {
                 }
                 
                 Button {
-                    if let mapSelection {
-                        getDirections = true
-                        isShowDetailMap = false
-                    }
+                    getDirections = true
+                    isShowDetailMap = false
                 } label: {
                     Text("Open in Maps")
                         .font(.headline)

@@ -51,7 +51,7 @@ struct SpeedView: View {
             Spacer()
             Spacer()
             VStack {
-                Text("Anlık Hız")
+                Text("Current Speed")
                     .font(.title)
                     .padding()
                 let speedText = getSpeedText()
@@ -75,7 +75,7 @@ struct SpeedView: View {
                             .animation(.easeInOut(duration: 1.0), value: isScaled)
                     } else {
                         Button(action: startCountdown) {
-                            Text("Başla")
+                            Text("Start")
                                 .font(.title)
                                 .padding()
                                 .background(Color.blue)
@@ -92,7 +92,7 @@ struct SpeedView: View {
 
     private func portraitLayout(geometry: GeometryProxy) -> some View {
         VStack {
-            Text("Anlık Hız")
+            Text("Current Speed")
                 .font(.title)
                 .padding()
             let speedText = getSpeedText()
@@ -113,7 +113,7 @@ struct SpeedView: View {
                         .animation(.easeInOut(duration: 1.0), value: isScaled)
                 } else {
                     Button(action: startCountdown) {
-                        Text("Başla")
+                        Text("Start")
                             .font(.title)
                             .padding()
                             .background(Color.blue)

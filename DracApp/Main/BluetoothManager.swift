@@ -41,7 +41,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         // Bağlantı başarılı, hizmetleri keşfet
         peripheral.discoverServices(nil)
-        showNotification(title: "Bağlantı Başarılı", body: "Bluetooth cihazına bağlandınız.")
+        showNotification(title: "Bağlantı Başarılı", body: "Bluetooth cihazına bağlandınız.", shouldOpenApp: true)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
@@ -79,11 +79,19 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     }
 
     // Bildirim gösterme fonksiyonu
-    private func showNotification(title: String, body: String) {
+    private func showNotification(title: String, body: String, shouldOpenApp: Bool = false) {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = .default
+
+        // Kullanıcı bildirime tıkladığında uygulamaya yönlendirilecek
+        if shouldOpenApp {
+            content.categoryIdentifier = "BLUETOOTH_NOTIFICATION"
+            let openAppAction = UNNotificationAction(identifier: "OPEN_APP", title: "Uygulamayı Aç", options: .foreground)
+            let category = UNNotificationCategory(identifier: "BLUETOOTH_NOTIFICATION", actions: [openAppAction], intentIdentifiers: [], options: [])
+            UNUserNotificationCenter.current().setNotificationCategories([category])
+        }
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
 
@@ -94,4 +102,3 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
         }
     }
 }
-
