@@ -8,14 +8,14 @@
 import SwiftUI
 
 enum ActiveView: CaseIterable {
-    case maps, contacts, music, instagram, speed
+    case maps, contacts, music, speedometer, speed
     
     var systemImageName: String {
         switch self {
         case .maps: return "map"
         case .contacts: return "phone"
         case .music: return "music.note"
-        case .instagram: return "car.fill"
+        case .speedometer: return "car.fill"
         case .speed: return "gauge.with.dots.needle.67percent"
         }
     }
@@ -25,7 +25,7 @@ enum ActiveView: CaseIterable {
         case .maps: return .blue
         case .contacts: return .green
         case .music: return .purple
-        case .instagram: return .orange
+        case .speedometer: return .orange
         case .speed: return .red
         }
     }

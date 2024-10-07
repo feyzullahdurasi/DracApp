@@ -62,7 +62,7 @@ struct SpeedView: View {
             }
             VStack{
                 if countdownFinished {
-                    Text("\(String(format: "%.2f", elapsedTime)) sn")
+                    Text("\(String(format: "%.2f", elapsedTime)) sec")
                         .font(.title3)
                         .padding()
                 } else {
@@ -100,7 +100,7 @@ struct SpeedView: View {
                 .font(.title2)
                 .padding()
             if countdownFinished {
-                Text("\(String(format: "%.2f", elapsedTime)) sn")
+                Text("\(String(format: "%.2f", elapsedTime)) sec")
                     .font(.title3)
                     .padding()
             } else {

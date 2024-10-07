@@ -26,12 +26,3 @@ struct ContactsView: View {
         GenericView(isShowing: $showContacts, title: "Contacts View")
     }
 }
-
-struct InstagramView: View {
-    @Binding var showInstagram: Bool
-    
-    var body: some View {
-        GenericView(isShowing: $showInstagram, title: "Instagram View")
-    }
-}
-

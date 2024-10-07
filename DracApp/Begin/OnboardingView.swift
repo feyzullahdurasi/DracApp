@@ -27,7 +27,7 @@ struct OnboardingView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
-            TextField("Email", text: $email)
+            TextField("E-mail", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .keyboardType(.emailAddress)

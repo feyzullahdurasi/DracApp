@@ -16,7 +16,8 @@ struct MainView: View {
     @State private var selectedStreamingService: StreamingService = .spotify
     @State private var isShowingShopping = false
     @State private var isShowingSleepMode = false
-    
+    @State private var isShowingSpeedometer = false
+
     var body: some View {
         ZStack {
             if isFirstLaunch {
@@ -122,8 +123,8 @@ struct MainView: View {
                 ContactsView(showContacts: .constant(true))
             case .music:
                 MusicView(selectedStreamingService: selectedStreamingService)
-            case .instagram:
-                InstagramView(showInstagram: .constant(true))
+            case .speedometer:
+                SpeedometerView(showSpeedometer: .constant(true))
             case .speed:
                 SpeedView(showSpeed: .constant(true))
             }
