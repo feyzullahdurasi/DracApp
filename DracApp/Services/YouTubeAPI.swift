@@ -8,7 +8,7 @@
 import Foundation
 
 struct YouTubeAPI {
-    private let apiKey = "AIzaSyAr_Mt1dNZkncYUG9D1teKL9OLhG5cHMws"
+    private let apiKey = ""
     
     func fetchMusicVideos(query: String, completion: @escaping (Result<[Video], Error>) -> Void) {
         let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(query)&type=video&videoCategoryId=10&key=\(apiKey)"
